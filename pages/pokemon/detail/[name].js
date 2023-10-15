@@ -7,7 +7,7 @@ import { formatNumberWithLeadingZero } from "../../../utils/common"
 const Pokemon = ({ pokemon }) => {
   const pokeIndex = formatNumberWithLeadingZero(pokemon?.id)
   const router = useRouter()
-  console.log("ahoy", pokemon)
+
   return (
     <div className="w-full h-full flex justify-center px-5 py-2">
       <div
