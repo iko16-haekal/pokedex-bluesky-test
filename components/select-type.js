@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-const TypeSelect = ({ typeList, pokemonType }) => {
+const InputSelect = ({ typeList, pokemonType }) => {
   const router = useRouter()
 
   const handleChange = (event) => {
@@ -27,4 +27,4 @@ const TypeSelect = ({ typeList, pokemonType }) => {
   )
 }
 
-export default TypeSelect
+export default InputSelect

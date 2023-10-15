@@ -76,14 +76,23 @@ const Pokemon = ({ pokemon }) => {
 export default Pokemon
 
 export async function getServerSideProps(context) {
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${context.query.name}`
-  )
-  const pokemon = await response.json()
+  try {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${context.query.name}`
+    )
+    const pokemon = await response.json()
 
-  return {
-    props: {
-      pokemon,
-    },
+    return {
+      props: {
+        pokemon,
+      },
+    }
+  } catch (error) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/404",
+      },
+    }
   }
 }
